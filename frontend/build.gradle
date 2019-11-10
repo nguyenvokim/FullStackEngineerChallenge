@@ -1,0 +1,43 @@
+plugins {
+    id "com.moowork.node" version "1.3.1"
+}
+apply plugin: 'base'
+apply plugin: 'com.moowork.node' // gradle-node-plugin
+
+
+node {
+    /* gradle-node-plugin configuration
+       https://github.com/srs/gradle-node-plugin/blob/master/docs/node.md
+       Task name pattern:
+       ./gradlew npm_<command> Executes an NPM command.
+    */
+    // Version of node to use.
+    version = '10.15.3'
+    // Version of npm to use.
+    npmVersion = '6.4.1'
+    // If true, it will download node using above parameters.
+    // If false, it will try to use globally installed node.
+    download = true
+}
+
+ext {
+    deployPhase = System.getProperty("deploy.phase", "local")
+}
+
+//Gradle task calling npm run build command
+task npmBuild(type: NpmTask, dependsOn: npmInstall) {
+    group = 'node'
+    args = ['run', 'build']
+}
+
+//jar {
+//    dependsOn 'npm_run_build'+deployPhase
+//    from('dist'){
+//        into 'static'
+//    }
+//}
+
+
+
+
+

@@ -1,0 +1,4 @@
+rootProject.name = 'com.nguyenvk.assignment'
+include 'backend'
+include 'frontend'
+

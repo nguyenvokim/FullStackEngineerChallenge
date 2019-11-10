@@ -1,3 +1,32 @@
+# Vo Kim Nguyen Assignment
+
+## Assumptions Made
+
+* System had three main views, **Employee View**, **Admin Employee** and **Admin Performance Review**
+* There are no authenticate system
+* Therefore, if uses on the page **Employee View**, mean they are employee. If on page **Admin Employee** and **Admin Performance Review**, mean they are admin
+* Admin is only able to view a performance review, not able to delete or update or add
+* All validation also made on Frontend, so if you manual send API with another Tool like Postman to hack backend, it's easy.
+
+## Technical stack
+
+* #### Backend
+  * Java 8 is primary language
+  * Recommend use IntelliJ as mainly IDE fro project
+  * Use SpringBoots, Gradle, JPA and Lombok
+* #### Frontend
+  * Use VueJs Framework, Vuex
+  * Use node >= 10.x.x
+
+## How To run
+
+* Create new Mysql database, and import **assignment.sql** for latest database structure
+* Update file **application-local.properties** with your Mysql server information
+* Enable Annotation Processors, for IntelliJ IDEA, use dialog *Preferences > Project Settings > Compiler > Annotation Processors.*
+* Build Frontend, **cd frontend** and **npm install** and **npm run build** (Make sure node > 10.x.x)
+* Application listen on port 9992
+
+
 # Full Stack Developer Challenge
 This is an interview challengs. Please feel free to fork. Pull Requests will be ignored.
 
